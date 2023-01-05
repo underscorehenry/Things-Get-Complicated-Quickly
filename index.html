@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        #continueButton {
+            color: black;
+        }
+
+        #continueButton:hover {
+            color: grey;
+        }
+
+        #logBox {
+            display: none;
+        }
+
+        .firstPage {
+            display: inline;
+        }
+
+        .secondPage {
+            display: none;
+        }
+
+        .thirdPage {
+            display: none;
+        }
+
+        .fourthPage {
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 656px; width: 1365px; background-color: rgb(28, 48, 39); position: absolute; left: 0px; top: 0px;"></div>
+    <div class="firstPage" style="height: 580px; width: 500px; background-color: rgb(83, 173, 80); border-radius: 30px; position: absolute; left: 150px; top: 30px;"></div>
+    <div class="firstPage" style="height: 580px; width: 500px; background-color: rgb(111, 101, 255); border-radius: 30px; position: absolute; left: 700px; top: 30px;"></div>
+    <div class="firstPage" style="height: 10px; width: 150px; background-color: rgb(255, 43, 43); border-radius: 7px; position: absolute; left: 100px; top: 400px;"></div>
+    <p class="firstPage" style="position: absolute; left: 100px; top: 345px; font-family: 'Josefin Sans'; font-size: 30px; color: white;">Things Get Complicated Quickly</p>
+    <div class="firstPage" style="background-image: url('dots.svg'); position: absolute; width: 300px; height: 300px; background-repeat: no-repeat; background-size: cover; left: 150px; top: 30px;"></div>
+    <div class="firstPage" id="hiddenDot" onmouseover="hoverOverLink('hiddenDot')" style="background-color: rgb(255, 233, 108); width: 50px; height: 50px; position: absolute; border-radius: 50px; left: 400px; top: 200px;"></div>
+    <div class="firstPage" id="firstLink" onmouseover="hoverOverLink('firstLink')" style="background-color: rgb(255, 233, 108); position: absolute;  left: 900px; top: 150px; width: 300px; height: 50px; border-radius: 10px;">
+        <p class="firstPage" style="font-family: 'Josefin Sans'; position: relative; text-align: center; color: rgb(96, 0, 126);">Need A Key</p>
+    </div>
+    <div class="firstPage"  id="secondLink" onmouseover="hoverOverLink('secondLink')"  style="background-color: rgb(8, 116, 74); position: absolute;  left: 900px; top: 300px; width: 300px; height: 50px; border-radius: 10px;">
+        <p class="firstPage" style="font-family: 'Josefin Sans'; position: relative; text-align: center; color: rgb(230, 154, 253);">Need A Key</p>
+    </div>
+    <div class="firstPage"  id="thirdLink" onmouseover="hoverOverLink('thirdLink')" style="background-color: rgb(117, 59, 124); position: absolute;  left: 900px; top: 450px; width: 300px; height: 50px; border-radius: 10px;">
+        <p class="firstPage" style="font-family: 'Josefin Sans'; position: relative; text-align: center; color: rgb(108, 255, 194);">Need A Key</p>
+    </div>
+
+
+    <!----Second Page-->
+    <div class="secondPage" style="height: 580px; width: 500px; background-color: rgb(224, 208, 57); border-radius: 30px; position: absolute; left: 150px; top: 30px;"></div>
+    <div class="secondPage" style="height: 580px; width: 500px; background-color: rgb(185, 174, 19); border-radius: 30px; position: absolute; left: 700px; top: 30px;"></div>
+    <div class="secondPage" onclick="talkToAnObject('secondPage')" style="height: 230px; width: 230px; background-color: white; position: absolute; left: 900px; top: 200px; background-image: url('IDK.svg'); background-repeat: no-repeat; background-position: center;">
+    </div>
+    <div class="secondPage" onmouseover="hoverOverLink('backToHome')" onclick="followLink('secondPage', 'firstPage')" id="backToHome" style="position: absolute; width: 170px; height: 50px; background-color: rgb(63, 136, 63); left: 320px; top: 70px; border-radius: 10px;">
+    <p style="font-family: 'Josefin Sans'; color: white; position: relative; text-align: center;">Back To Home</p>
+    </div>
+    <div class="secondPage tickTackToe" id="1" onclick="changeColor('1')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 200px; "></div>
+    <div class="secondPage tickTackToe" id="2" onclick="changeColor('2')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 200px; "></div>
+    <div class="secondPage tickTackToe" id="3" onclick="changeColor('3')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 200px; "></div>
+    <div class="secondPage tickTackToe" id="4" onclick="changeColor('4')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 300px; "></div>
+    <div class="secondPage tickTackToe" id="5" onclick="changeColor('5')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 300px; "></div>
+    <div class="secondPage tickTackToe" id="6" onclick="changeColor('6')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 300px; "></div>
+    <div class="secondPage tickTackToe" id="7" onclick="changeColor('7')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 400px; "></div>
+    <div class="secondPage tickTackToe" id="8" onclick="changeColor('8')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 400px; "></div>
+    <div class="secondPage tickTackToe" id="9" onclick="changeColor('9')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 400px; "></div>
+
+    <!----Third Page-->
+    <div class="thirdPage" style="height: 580px; width: 500px; background-color: rgb(0, 255, 98); border-radius: 30px; position: absolute; left: 150px; top: 30px;"></div>
+    <div class="thirdPage" style="height: 580px; width: 500px; background-color: rgb(5, 173, 145); border-radius: 30px; position: absolute; left: 700px; top: 30px;">
+    <p style="font-family: 'Josefin Sans'; color: white; position: relative; text-align: center; top: 200px;">Use The Arrow Keys to move the circle around the board. The Pink Block takes You to a random area in the board, and you cannot got onto green dots. Try to fill the board for the key. Good Luck.</p>
+    <p style="font-family: 'Josefin Sans'; color: white; position: relative; text-align: center; top: 200px;">PS: That girl sucks at tic tac toe.</p>
+    </div>
+    <div class="thirdPage" onmouseover="hoverOverLink('backToHome2')" onclick="followLink('thirdPage', 'firstPage')" id="backToHome2" style="position: absolute; width: 170px; height: 50px; background-color: rgb(63, 136, 63); left: 320px; top: 70px; border-radius: 10px;">
+        <p style="font-family: 'Josefin Sans'; color: white; position: relative; text-align: center;">Back To Home</p>
+    </div>
+    <div class="thirdPage gameBlocks" id="one" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 200px; "></div>
+    <div class="thirdPage gameBlocks" id="two" style="width: 50px; height: 50px; background-color: rgb(2, 158, 62); position: absolute; left: 370px; top: 200px; "></div>
+    <div class="thirdPage gameBlocks" id="three" style="width: 50px; height: 50px; background-color: rgb(2, 158, 62); position: absolute; left: 470px; top: 200px; "></div>
+    <div class="thirdPage gameBlocks" id="four" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 300px; "></div>
+    <div class="thirdPage gameBlocks" id="five" style="width: 50px; height: 50px; background-color: rgb(219, 4, 201); position: absolute; left: 370px; top: 300px; "></div>
+    <div class="thirdPage gameBlocks" id="six" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 300px; "></div>
+    <div class="thirdPage gameBlocks" id="seven" style="width: 50px; height: 50px; background-color: rgb(2, 158, 62); position: absolute; left: 270px; top: 400px; "></div>
+    <div class="thirdPage gameBlocks" id="eight" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 400px; "></div>
+    <div class="thirdPage gameBlocks" id="nine" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 400px; "></div>
+    <div class="thirdPage gameBlocks" id="ten" style="width: 50px; height: 50px; background-color: rgb(219, 4, 201); position: absolute; left: 270px; top: 500px; "></div>
+    <div class="thirdPage gameBlocks" id="eleven" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 500px; "></div>
+    <div class="thirdPage gameBlocks" id="twelve" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 500px; "></div>
+    <div class="thirdPage" id="movingCharacter" style="position: absolute; width: 50px; height: 50px; border-radius: 30px; background-color: rgb(175, 228, 195); left: 470px; top: 200px;"></div>
+    
+    <!----fourth Page-->
+    <div class="fourthPage" style="height: 580px; width: 500px; background-color: rgb(137, 40, 148); border-radius: 30px; position: absolute; left: 150px; top: 30px;"></div>
+    <div class="fourthPage" style="height: 580px; width: 500px; background-color: rgb(161, 121, 167); border-radius: 30px; position: absolute; left: 700px; top: 30px;"></div>
+    <div class="fourthPage" onclick="talkToAnObject('fourthPage')" style="height: 230px; width: 230px; background-color: white; position: absolute; left: 900px; top: 200px; background-image: url('IDK.svg'); background-repeat: no-repeat; background-position: center;">
+    </div>
+    <div class="fourthPage" onmouseover="hoverOverLink('backToHome3')" onclick="followLink('fourthPage', 'firstPage')" id="backToHome3" style="position: absolute; width: 170px; height: 50px; background-color: rgb(73, 99, 247); left: 320px; top: 70px; border-radius: 10px;">
+    <p style="font-family: 'Josefin Sans'; color: white; position: relative; text-align: center;">Back To Home</p>
+    </div>
+    <div class="fourthPage tickTackToe1" id="11" onclick="changeColor('11')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 200px; "></div>
+    <div class="fourthPage tickTackToe1" id="12" onclick="changeColor('12')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 200px; "></div>
+    <div class="fourthPage tickTackToe1" id="13" onclick="changeColor('13')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 200px; "></div>
+    <div class="fourthPage tickTackToe1" id="14" onclick="changeColor('14')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 300px; "></div>
+    <div class="fourthPage tickTackToe1" id="15" onclick="changeColor('15')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 300px; "></div>
+    <div class="fourthPage tickTackToe1" id="16" onclick="changeColor('16')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 300px; "></div>
+    <div class="fourthPage tickTackToe1" id="17" onclick="changeColor('17')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 270px; top: 400px; "></div>
+    <div class="fourthPage tickTackToe1" id="18" onclick="changeColor('18')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 370px; top: 400px; "></div>
+    <div class="fourthPage tickTackToe1" id="19" onclick="changeColor('19')" style="width: 50px; height: 50px; background-color: white; position: absolute; left: 470px; top: 400px; "></div>
+
+
+    <div id="logBox" style="position: absolute; width: 400px; height: 200px; background-color: white; left: 300px; top: 400px; border-radius: 50px; align-items: center;">
+    <p id="dialog" style="position: relative; font-family: 'Josefin Sans'; text-align: center;"></p>
+    <p id="continueButton" style="position: relative; font-family: 'Josefin Sans'; text-align: center; left: 150px; font-weight: bold; width: 100px; margin: 0px; padding: 0px;">Continue</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
